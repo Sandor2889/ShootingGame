@@ -3,6 +3,8 @@
 #include <iostream>
 
 #include "Console.h"
+#include "Windows.h"
+#include "conio.h"
 
 namespace ShootingGame
 {
@@ -10,7 +12,8 @@ namespace ShootingGame
 	{
 	public:
 		BaseScene();
-		
-		virtual void Display() = 0;
+
+		virtual void InProgress() = 0;
+		virtual void MainDisplay() = 0;
 	};
 }

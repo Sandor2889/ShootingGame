@@ -1,27 +1,23 @@
 #pragma once
 
+#include "BaseScene.h"
+#include "GameManager.h"
 
 namespace ShootingGame
 {
-	enum Scene
-	{
-		Scene_Title,
-		Scene_InGame,
-		Scene_Ending
-	};
-
 	class SceneManager
 	{
 	private:
-		Scene CurrentScene;
-		
-	public:
+		static SceneManager* instance;
+		BaseScene* baseScene;
+
 		SceneManager();
-		SceneManager(const SceneManager& _sceneMgr);
 		~SceneManager();
 
-		static SceneManager& GetInstance();
-		Scene GetScene();
-		void SetScene(int _num);
+	public:
+		static SceneManager* GetInstance();	
+		BaseScene* GetScene();
 	};
+
+	SceneManager* SceneManager::instance = nullptr;
 }

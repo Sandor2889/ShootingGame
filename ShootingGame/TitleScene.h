@@ -8,6 +8,7 @@ namespace ShootingGame
 	{
 	public:
 		TitleScene();
-		virtual void DisplayTitle();
+		virtual void InProgress();
+		virtual void MainDisplay();
 	};
 }

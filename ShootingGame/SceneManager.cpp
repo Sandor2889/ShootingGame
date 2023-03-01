@@ -1,14 +1,22 @@
 #include "SceneManager.h"
+#include "TitleScene.h"
 
 using namespace ShootingGame;
 
-SceneManager::SceneManager () {};
-SceneManager::~SceneManager() {};
+SceneManager::SceneManager() {}
 
-SceneManager::SceneManager(const SceneManager& _sceneMgr) {};
+SceneManager::~SceneManager() {}
 
-SceneManager& SceneManager::GetInstance()
+
+SceneManager* SceneManager::GetInstance()
 {
-	static SceneManager sceneMgr;
-	return sceneMgr;
+	if (instance == nullptr) { instance = new SceneManager(); }
+	return instance;
+}
+
+
+// 해당 씬 가져오기
+BaseScene* SceneManager::GetScene()
+{
+	return baseScene;
 }

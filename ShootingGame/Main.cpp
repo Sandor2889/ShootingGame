@@ -1,23 +1,23 @@
 #include <time.h>
 #include <cstdlib>
-
-#include "Console.h"
-#include "Rect.h"
 #include "GameManager.h"
 #include "SceneManager.h"
+#include "Rect.h"
 
 using namespace ShootingGame;
 
+class BaseScene;
+
 int main()
 {
-	// 화면창 크기 설정 및 마우스 숨기기
-	MyConsole::SetConsole(40, 10);
-	MyConsole::CursorHide();
-	Rect ConsoleBoundary(1, 1, 40, 30);
+	GameManager* gameMgr = GameManager::GetInstance();
+	SceneManager* sceneMgr = SceneManager::GetInstance();
+	gameMgr->SetGameState(GameState::Scene_Title);
 
-	GameManager gameMgr = GameManager::GetInstance();
-	SceneManager sceneMgr = SceneManager::GetInstance();
-
+	while (true)
+	{
+		sceneMgr->GetScene()->InProgress();
+	}
 
 	return 0;
 }

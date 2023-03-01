@@ -1,2 +1,10 @@
 ﻿  Main.cpp
-  ShootingGame.vcxproj -> C:\Users\UserK\source\repos\ShootingGame\Debug\ShootingGame.exe
+  SceneManager.cpp
+  TitleScene.cpp
+  코드를 생성하고 있습니다...
+InGameScene.obj : error LNK2005: "private: static class ShootingGame::GameManager * ShootingGame::GameManager::instance" (?instance@GameManager@ShootingGame@@0PAV12@A)이(가) GameManager.obj에 이미 정의되어 있습니다.
+Main.obj : error LNK2005: "private: static class ShootingGame::GameManager * ShootingGame::GameManager::instance" (?instance@GameManager@ShootingGame@@0PAV12@A)이(가) GameManager.obj에 이미 정의되어 있습니다.
+SceneManager.obj : error LNK2005: "private: static class ShootingGame::GameManager * ShootingGame::GameManager::instance" (?instance@GameManager@ShootingGame@@0PAV12@A)이(가) GameManager.obj에 이미 정의되어 있습니다.
+SceneManager.obj : error LNK2005: "private: static class ShootingGame::SceneManager * ShootingGame::SceneManager::instance" (?instance@SceneManager@ShootingGame@@0PAV12@A)이(가) Main.obj에 이미 정의되어 있습니다.
+TitleScene.obj : error LNK2005: "private: static class ShootingGame::GameManager * ShootingGame::GameManager::instance" (?instance@GameManager@ShootingGame@@0PAV12@A)이(가) GameManager.obj에 이미 정의되어 있습니다.
+C:\Users\UserK\Desktop\Sandor2889-github-blog\ShootingGame\ShootingGame\Debug\ShootingGame.exe : fatal error LNK1169: 여러 번 정의된 기호가 있습니다.
