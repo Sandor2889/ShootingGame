@@ -29,5 +29,5 @@ namespace ShootingGame
 		void SetLife(int _num);
 	};
 
-	GameManager* GameManager::instance = nullptr;
+	
 }

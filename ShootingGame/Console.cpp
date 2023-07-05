@@ -5,7 +5,7 @@
 #include "Console.h"
 
 
-
+// 콘솔 사이즈 설정
 void MyConsole::SetConsole(int _cols, int _lines)
 {
     char modeCmd[128];
@@ -13,15 +13,16 @@ void MyConsole::SetConsole(int _cols, int _lines)
     system(modeCmd);
 }
 
+// 커서 설정
 void MyConsole::CursorHide()
 {
     CONSOLE_CURSOR_INFO cursorInfo = { 0, };
-    cursorInfo.dwSize = 1; //커서 굵기 (1 ~ 100)
-    cursorInfo.bVisible = FALSE; //커서 Visible TRUE(보임) FALSE(숨김)
+    cursorInfo.dwSize = 1; // 커서 굵기 (1 ~ 100)
+    cursorInfo.bVisible = FALSE;
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &cursorInfo);
 }
 
-
+// 커서 위치 이동
 void MyConsole::GotoXY(int _x, int _y) {
     COORD Pos = { _x - 1, _y - 1 };
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);

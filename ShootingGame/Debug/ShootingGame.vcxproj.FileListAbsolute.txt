@@ -1,2 +1,3 @@
 C:\Users\UserK\source\repos\ShootingGame\Debug\ShootingGame.exe
 C:\Users\UserK\Desktop\Sandor2889-github-blog\ShootingGame\ShootingGame\Debug\ShootingGame.exe
+E:\ShootingGame\ShootingGame\Debug\ShootingGame.exe

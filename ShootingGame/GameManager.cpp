@@ -1,15 +1,20 @@
 #include "GameManager.h"
+#include "SceneManager.h"
 
 using namespace ShootingGame;
-
+GameManager* GameManager::instance = nullptr;
 GameManager::GameManager() {}
 
-GameManager::~GameManager() {}
+GameManager::~GameManager() 
+{
+	delete instance;
+	instance = nullptr;
+}
 
 GameManager* GameManager::GetInstance()
 {
-	if (instance == nullptr) { instance = new GameManager(); }
-	return instance;
+	if (GameManager::instance == nullptr) { GameManager::instance = new GameManager(); }
+	return GameManager::instance;
 }
 
 
@@ -23,6 +28,7 @@ GameState GameManager::GetGameState()
 void GameManager::SetGameState(GameState _state)
 {
 	currentState = _state;
+	SceneManager::GetInstance()->SetScene(_state);
 }
 
 // 점수 가져오기

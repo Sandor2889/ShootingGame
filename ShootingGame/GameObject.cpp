@@ -24,9 +24,9 @@ void GameObject::Update()
 		return;
 	}
 
-	for (int ix = 0; ix < compList.size(); ix++)
+	for (int i = 0; i < compList.size(); i++)
 	{
-		compList[ix]->Update(this);
+		compList[i]->Update(this);
 	}
 }
 

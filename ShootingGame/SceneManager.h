@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include "BaseScene.h"
 #include "GameManager.h"
 
@@ -9,15 +10,14 @@ namespace ShootingGame
 	{
 	private:
 		static SceneManager* instance;
-		BaseScene* baseScene;
+		std::map<GameState, BaseScene*> sceneContainer;
+		BaseScene* currentScene;
 
 		SceneManager();
 		~SceneManager();
-
 	public:
 		static SceneManager* GetInstance();	
 		BaseScene* GetScene();
+		void SetScene(GameState _state);
 	};
-
-	SceneManager* SceneManager::instance = nullptr;
 }
