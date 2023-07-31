@@ -3,9 +3,12 @@
 #include "InGameScene.h"
 
 using namespace ShootingGame;
+
 SceneManager* SceneManager::instance = nullptr;
-SceneManager::SceneManager() 
+
+SceneManager::SceneManager()
 {
+	currentScene = NULL;
 	sceneContainer.insert({ GameState::Scene_Title, new TitleScene });
 	sceneContainer.insert({ GameState::Scene_InGame, new InGameScene });
 }
@@ -26,7 +29,7 @@ BaseScene* SceneManager::GetScene()
 	return currentScene;
 }
 
-void SceneManager::SetScene(GameState _state)
+void SceneManager::SetScene(const GameState& _state)
 {
 	currentScene = sceneContainer.at(_state);
 }

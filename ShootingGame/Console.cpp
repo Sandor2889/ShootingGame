@@ -6,7 +6,7 @@
 
 
 // 콘솔 사이즈 설정
-void MyConsole::SetConsole(int _cols, int _lines)
+void MyConsole::SetConsole(const int& _cols, const int& _lines)
 {
     char modeCmd[128];
     sprintf_s(modeCmd, sizeof(modeCmd), "mode con cols=%d lines=%d", _cols, _lines);
@@ -23,7 +23,7 @@ void MyConsole::CursorHide()
 }
 
 // 커서 위치 이동
-void MyConsole::GotoXY(int _x, int _y) {
+void MyConsole::GotoXY(const int& _x, const int& _y) {
     COORD Pos = { _x - 1, _y - 1 };
     SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Pos);
 }

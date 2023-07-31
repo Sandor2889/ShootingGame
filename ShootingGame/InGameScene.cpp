@@ -5,6 +5,7 @@
 #include "DisplayBase.h"
 #include "MyCoordinate.h"
 #include "GameObject.h"
+#include "Boundary.h"
 
 using namespace ShootingGame;
 
@@ -23,12 +24,14 @@ void InGameScene::InProgress()
 	IComp* icomp = nullptr;
 	PlayerInput playerInput;	// player 입력 처리
 
-	DisplayBase display("山");	// player
+	DisplayBase display("山");	// player 출력
+	Boundary playerBoundary(Rect(30, 1, 50, 60)); // player 이동범위
 
 	GameObject player(MyCoordinate(29, 40), true);	// player 시작 위치 및 초기화
 
 	// player 기능 추가
 	player.AddComp(&playerInput);
+	player.AddComp(&playerBoundary);
 	player.AddComp(&display);
 
 	while (gameMgr->GetGameState() == GameState::Scene_InGame)

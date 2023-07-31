@@ -2,12 +2,12 @@
 
 class Rect
 {
-private:
+public:
 	const int top;
 	const int left;
 	const int bottom;
 	const int right;
 public:
 	Rect();
-	Rect(int _top, int _left, int _bottom, int _right);
+	Rect(const int& _top, const int& _left, const int& _bottom, const int& _right);
 };

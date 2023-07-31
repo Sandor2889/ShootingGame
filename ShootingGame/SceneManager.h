@@ -18,6 +18,6 @@ namespace ShootingGame
 	public:
 		static SceneManager* GetInstance();	
 		BaseScene* GetScene();
-		void SetScene(GameState _state);
+		void SetScene(const GameState& _state);
 	};
 }

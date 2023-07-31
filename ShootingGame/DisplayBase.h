@@ -13,7 +13,7 @@ class DisplayBase : public IComp
 public:
 	string mark;
 
-	DisplayBase(string _pchar);
+	DisplayBase(const string& _pchar);
 	virtual void Update(GameObject* _obj);
 
 };

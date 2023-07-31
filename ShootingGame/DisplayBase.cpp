@@ -4,7 +4,7 @@
 #include "Console.h"
 #include "GameObject.h"
 
-DisplayBase::DisplayBase(string _pchar)
+DisplayBase::DisplayBase(const string& _pchar)
 {
 	mark = _pchar;
 }

@@ -140,8 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BaseScene.cpp" />
+    <ClCompile Include="Boundary.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="DisplayBase.cpp" />
+    <ClCompile Include="EnemyBase.cpp" />
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="InGameScene.cpp" />
@@ -154,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="Boundary.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="DisplayBase.h" />
     <ClInclude Include="GameManager.h" />

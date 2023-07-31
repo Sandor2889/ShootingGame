@@ -13,13 +13,14 @@ class GameObject
 private:
 
 public:
-	bool active;
+	bool isActive;				// 활성화상태
 	MyCoordinate coordinate;
 	MyCoordinate size;
 	vector<IComp*> compList;
 
 	GameObject();
-	GameObject(MyCoordinate _coord, bool _active);
+	GameObject(const MyCoordinate& _coord, const bool& _active);
+	~GameObject();
 
 	void AddComp(IComp* _comp);
 

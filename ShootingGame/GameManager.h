@@ -22,11 +22,11 @@ namespace ShootingGame
 		~GameManager();
 		static GameManager* GetInstance();
 		GameState GetGameState();
-		void SetGameState(GameState _state);
+		void SetGameState(const GameState& _state);
 		int GetScore();
-		void SetScore(int _num);
+		void SetScore(const int& _num);
 		int GetLife();
-		void SetLife(int _num);
+		void SetLife(const int& _num);
 	};
 
 	

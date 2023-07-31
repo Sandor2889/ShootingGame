@@ -2,7 +2,7 @@
 
 MyCoordinate::MyCoordinate() : x(0), y(0) {}
 
-MyCoordinate::MyCoordinate(int _x, int _y) : x(_x), y(_y) {}
+MyCoordinate::MyCoordinate(const int& _x, const int& _y) : x(_x), y(_y) {}
 
 
 MyCoordinate MyCoordinate::operator+ (const MyCoordinate& _coord) 

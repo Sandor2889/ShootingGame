@@ -3,7 +3,12 @@
 
 using namespace ShootingGame;
 GameManager* GameManager::instance = nullptr;
-GameManager::GameManager() {}
+GameManager::GameManager() 
+{ 
+	currentState = GameState::Scene_Title; 
+	score = 0;
+	life = 3;
+}
 
 GameManager::~GameManager() 
 {
@@ -25,7 +30,7 @@ GameState GameManager::GetGameState()
 }
 
 // 게임 상태 변경
-void GameManager::SetGameState(GameState _state)
+void GameManager::SetGameState(const GameState& _state)
 {
 	currentState = _state;
 	SceneManager::GetInstance()->SetScene(_state);
@@ -38,7 +43,7 @@ int GameManager::GetScore()
 }
 
 // 점수 변경
-void ShootingGame::GameManager::SetScore(int _num)
+void ShootingGame::GameManager::SetScore(const int& _num)
 {
 	score += _num;
 }
@@ -50,7 +55,7 @@ int ShootingGame::GameManager::GetLife()
 }
 
 // 목숨 변경
-void ShootingGame::GameManager::SetLife(int _num)
+void ShootingGame::GameManager::SetLife(const int& _num)
 {
 	life += _num;
 }

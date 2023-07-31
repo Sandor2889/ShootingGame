@@ -7,19 +7,27 @@ using namespace std;
 
 GameObject::GameObject()
 {
-	active = false;
+	isActive = false;
 	coordinate = MyCoordinate(0, 0);
 }
 
-GameObject::GameObject(MyCoordinate _coord, bool _active)
+GameObject::GameObject(const MyCoordinate& _coord, const bool& _active)
 {
-	active = _active;
+	isActive = _active;
 	coordinate = _coord;
+}
+
+GameObject::~GameObject()
+{
+	for (size_t i = 0; i < compList.size(); i++)
+	{
+		delete compList[i];
+	}
 }
 
 void GameObject::Update()
 {
-	if (active == false)
+	if (isActive == false)
 	{
 		return;
 	}
