@@ -11,11 +11,11 @@ using namespace std;
 class GameObject
 {
 private:
+	MyCoordinate coordinate;	// 위치
+	MyCoordinate size;			// 콜리젼 크기
 
 public:
 	bool isActive;				// 활성화상태
-	MyCoordinate coordinate;
-	MyCoordinate size;
 	vector<IComp*> compList;
 
 	GameObject();
@@ -26,7 +26,8 @@ public:
 
 	void Update();
 
-	void SetPosition(MyCoordinate _coord);
-	MyCoordinate GetPosition();
-
+	void SetPosition(const MyCoordinate& _coord);
+	MyCoordinate& GetPosition();
+	void SetSize(const MyCoordinate& _size);
+	MyCoordinate& GetSize();
 };

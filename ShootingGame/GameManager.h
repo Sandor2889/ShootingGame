@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Rect.h"
+
 namespace ShootingGame
 {
 	enum class GameState
@@ -16,7 +18,6 @@ namespace ShootingGame
 		GameState currentState;
 		int score;
 		int life;
-
 	public:
 		GameManager();
 		~GameManager();

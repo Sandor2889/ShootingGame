@@ -43,12 +43,22 @@ void GameObject::AddComp(IComp* _comp)
 	compList.push_back(_comp);
 }
 
-void GameObject::SetPosition(MyCoordinate _pos)
+void GameObject::SetPosition(const MyCoordinate& _pos)
 {
 	coordinate = _pos;
 }
 
-MyCoordinate GameObject::GetPosition()
+MyCoordinate& GameObject::GetPosition()
 {
 	return coordinate;
+}
+
+void GameObject::SetSize(const MyCoordinate& _size)
+{
+	size = _size;
+}
+
+MyCoordinate& GameObject::GetSize()
+{
+	return size;
 }

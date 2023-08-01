@@ -43,19 +43,19 @@ int GameManager::GetScore()
 }
 
 // 점수 변경
-void ShootingGame::GameManager::SetScore(const int& _num)
+void GameManager::SetScore(const int& _num)
 {
 	score += _num;
 }
 
 // 목숨 가져오기
-int ShootingGame::GameManager::GetLife()
+int GameManager::GetLife()
 {
 	return life;
 }
 
 // 목숨 변경
-void ShootingGame::GameManager::SetLife(const int& _num)
+void GameManager::SetLife(const int& _num)
 {
 	life += _num;
 }

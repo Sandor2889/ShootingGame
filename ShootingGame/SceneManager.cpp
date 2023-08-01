@@ -13,7 +13,14 @@ SceneManager::SceneManager()
 	sceneContainer.insert({ GameState::Scene_InGame, new InGameScene });
 }
 
-SceneManager::~SceneManager() {}
+SceneManager::~SceneManager()
+{
+	for (const auto& pair : sceneContainer)
+	{
+		delete pair.second;
+	}
+	sceneContainer.clear();
+}
 
 
 SceneManager* SceneManager::GetInstance()

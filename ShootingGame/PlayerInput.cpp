@@ -4,7 +4,6 @@
 #include "MyCoordinate.h"
 #include "GameObject.h"
 
-
 void PlayerInput::Update(GameObject* _obj)
 {
 	if (GetAsyncKeyState(VK_UP))
