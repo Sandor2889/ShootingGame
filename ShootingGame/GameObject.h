@@ -23,6 +23,7 @@ public:
 	~GameObject();
 
 	void AddComp(IComp* _comp);
+	void ClearComp();
 
 	void Update();
 

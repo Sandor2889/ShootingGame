@@ -7,6 +7,7 @@ PlayerBulletInput::PlayerBulletInput(BulletManager* _mgr)
 
 PlayerBulletInput::~PlayerBulletInput()
 {
+	bulletMgr = NULL;	// null을 안해주면 오류가뜸.. 왜?
 	delete bulletMgr;
 }
 

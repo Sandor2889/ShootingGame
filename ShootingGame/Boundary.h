@@ -1,14 +1,14 @@
 #pragma once
 
 #include "IComp.h"
-#include "Rect.h"
+#include <atltypes.h>
 
 class Boundary : public IComp
 {
 public:
-	Rect rect;
+	CRect rect;
 	
 public:
-	Boundary(const Rect& _rect);
+	Boundary(const CRect& _rect);
 	virtual void Update(GameObject* _obj);
 };

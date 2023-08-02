@@ -1,7 +1,7 @@
 #include "EnemyManager.h"
 #include "EnemyFactory.h"
 
-EnemyManager::EnemyManager(const int& _size, Rect _boundary)
+EnemyManager::EnemyManager(const int& _size, CRect _boundary)
 {
     for (int i = 0; i < _size; ++i)
     {

@@ -8,7 +8,7 @@ namespace ShootingGame
 	{
 	public:
 		TitleScene();
-		virtual void InProgress();
-		virtual void MainDisplay();
+		virtual void InProgress() override;
+		virtual void MainDisplay() override;
 	};
 }

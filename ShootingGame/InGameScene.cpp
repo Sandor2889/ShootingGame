@@ -11,6 +11,8 @@
 #include "BulletManager.h"
 #include "PlayerBulletMovement.h"
 #include "PlayerBulletInput.h"
+#include "CollisionPlayerEnemy.h"
+#include "CollisionPlayerBulletEnemy.h"
 
 using namespace ShootingGame;
 
@@ -26,32 +28,48 @@ void InGameScene::InProgress()
 	int updateTick = 0;
 	int tick = 30;
 
-	Rect BoundaryRect(1, 1, 50, 60);
+	CRect BoundaryRect(1, 1, 60, 50);
 
 	IComp* icomp = nullptr;
 
+	// Player 설정
 	DisplayBase display("山");	// player 출력
-	Boundary playerBoundary(Rect(30, 1, 50, 60)); // player 이동범위
+	Boundary playerBoundary(CRect(1, 30, 60, 50)); // player 이동범위
 	PlayerInput playerInput;	// player 입력 처리
+	Collision PlayerColl(2, 1);
 
-	BulletManager playerBulletMgr(5);
+	// Bullet 설정
+	BulletManager playerBulletMgr(10);
 	PlayerBulletMovement playerBulletMovement;
 	DisplayBase playerBulletDisplay("＊");
 	PlayerBulletInput playerBulletInput(&playerBulletMgr);
-	
-
-	Collision PlayerColl(2, 1);
+	Collision PlayerBulletColl(1, 1);
 
 	GameObject player(MyCoordinate(29, 40), true);	// player 시작 위치 및 초기화
 
 	// player 기능 추가
 	player.AddComp(&playerInput);
+	player.AddComp(&playerBulletInput);
 	player.AddComp(&playerBoundary);
 	player.AddComp(&PlayerColl);
 	player.AddComp(&display);
 
+	// Player Bullet 기능 추가
+	playerBulletMgr.AddComp(&playerBulletMovement);
+	playerBulletMgr.AddComp(&PlayerBulletColl);
+	playerBulletMgr.AddComp(&playerBulletDisplay);
+
 	// Enemy
 	EnemyManager enemyMgr(30, BoundaryRect);
+
+	// 충돌 설정
+	// Player <-> Enemy
+	CollisionPlayerEnemy collisionPlayerEnemy(&enemyMgr.objList);
+	player.AddComp(&collisionPlayerEnemy);
+
+	// PlayerBullet <-> Enemy
+	CollisionPlayerBulletEnemy collisionPlayerBulletEnemy(&enemyMgr.objList);
+	playerBulletMgr.AddComp(&collisionPlayerBulletEnemy);
 
 	while (gameMgr->GetGameState() == GameState::Scene_InGame)
 	{
@@ -66,11 +84,16 @@ void InGameScene::InProgress()
 		system("cls");
 		
 		player.Update();
+		playerBulletMgr.Update();
 		enemyMgr.Update();
 
 		MainDisplay();	
 		Sleep(tick);
 	}
+
+	player.ClearComp();
+	playerBulletMgr.ClearList();
+	enemyMgr.ClearList();
 }
 
 // 점수, 목숨 표기

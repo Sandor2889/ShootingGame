@@ -1,14 +1,13 @@
 #pragma once
 
-#include "Rect.h"
-
 namespace ShootingGame
 {
 	enum class GameState
 	{
 		Scene_Title,
 		Scene_InGame,
-		Scene_Ending
+		Scene_WinEnding,
+		Scene_LoseEnding
 	};
 
 	class GameManager
@@ -17,7 +16,9 @@ namespace ShootingGame
 		static GameManager* instance;
 		GameState currentState;
 		int score;
+		int goalScore;
 		int life;
+
 	public:
 		GameManager();
 		~GameManager();
@@ -28,6 +29,7 @@ namespace ShootingGame
 		void SetScore(const int& _num);
 		int GetLife();
 		void SetLife(const int& _num);
+		void CheckGoal();
 	};
 
 	

@@ -1,8 +1,9 @@
 #pragma once
 
-#include <map>
 #include "BaseScene.h"
 #include "GameManager.h"
+
+#include <map>
 
 namespace ShootingGame
 {
@@ -16,7 +17,7 @@ namespace ShootingGame
 		SceneManager();
 		~SceneManager();
 	public:
-		static SceneManager* GetInstance();	
+		static SceneManager* GetInstance();
 		BaseScene* GetScene();
 		void SetScene(const GameState& _state);
 	};

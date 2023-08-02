@@ -26,7 +26,7 @@ GameObject* EnemyFactory::CreateZigzagEnemy(MyCoordinate position)
     return enemy;
 }
 
-GameObject* EnemyFactory::CreateRandomEnemy(MyCoordinate position, Rect _boundary)
+GameObject* EnemyFactory::CreateRandomEnemy(MyCoordinate position, CRect _boundary)
 {
     int randomType = rand() % 2; // 0 또는 1 랜덤하게 선택
     GameObject* enemy;

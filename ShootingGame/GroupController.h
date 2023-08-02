@@ -13,6 +13,9 @@ class GroupController
 public:
 	vector<GameObject*> objList;
 
+public:
 	virtual ~GroupController();
-	void Update();
+	virtual void AddComp(IComp* _comp);
+	virtual void ClearList();
+	virtual void Update();
 };

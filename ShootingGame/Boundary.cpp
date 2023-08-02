@@ -2,7 +2,7 @@
 #include "MyCoordinate.h"
 #include "GameObject.h"
 
-Boundary::Boundary(const Rect& _rect) : rect(_rect) { };
+Boundary::Boundary(const CRect& _rect) : rect(_rect) { };
 
 void Boundary::Update(GameObject* _obj)
 {

@@ -2,11 +2,14 @@
 #include "SceneManager.h"
 
 using namespace ShootingGame;
+
 GameManager* GameManager::instance = nullptr;
+
 GameManager::GameManager() 
 { 
 	currentState = GameState::Scene_Title; 
 	score = 0;
+	goalScore = 30;
 	life = 3;
 }
 
@@ -58,4 +61,12 @@ int GameManager::GetLife()
 void GameManager::SetLife(const int& _num)
 {
 	life += _num;
+}
+
+void GameManager::CheckGoal()
+{
+	if (goalScore == score)
+	{
+		SetGameState(GameState::Scene_WinEnding);
+	}
 }

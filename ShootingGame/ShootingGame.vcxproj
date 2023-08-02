@@ -143,8 +143,13 @@
     <ClCompile Include="Boundary.cpp" />
     <ClCompile Include="BulletManager.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="CollisionController.cpp" />
+    <ClCompile Include="CollisionPlayerBulletEnemy.cpp" />
+    <ClCompile Include="CollisionPlayerEnemy.cpp" />
     <ClCompile Include="Console.cpp" />
     <ClCompile Include="DisplayBase.cpp" />
+    <ClCompile Include="LoseEndingScene.cpp" />
+    <ClCompile Include="WinEndingScene.cpp" />
     <ClCompile Include="EnemyBoundary.cpp" />
     <ClCompile Include="EnemyFactory.cpp" />
     <ClCompile Include="EnemyManager.cpp" />
@@ -157,7 +162,6 @@
     <ClCompile Include="PlayerBulletInput.cpp" />
     <ClCompile Include="PlayerBulletMovement.cpp" />
     <ClCompile Include="PlayerInput.cpp" />
-    <ClCompile Include="Rect.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TitleScene.cpp" />
   </ItemGroup>
@@ -167,8 +171,13 @@
     <ClInclude Include="BulletCommand.h" />
     <ClInclude Include="BulletManager.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="CollisionController.h" />
+    <ClInclude Include="CollisionPlayerBulletEnemy.h" />
+    <ClInclude Include="CollisionPlayerEnemy.h" />
     <ClInclude Include="Console.h" />
     <ClInclude Include="DisplayBase.h" />
+    <ClInclude Include="LoseEndingScene.h" />
+    <ClInclude Include="WinEndingScene.h" />
     <ClInclude Include="EnemyBoundary.h" />
     <ClInclude Include="EnemyManager.h" />
     <ClInclude Include="EnemyMovement.h" />
@@ -182,7 +191,6 @@
     <ClInclude Include="PlayerBulletInput.h" />
     <ClInclude Include="PlayerBulletMovement.h" />
     <ClInclude Include="PlayerInput.h" />
-    <ClInclude Include="Rect.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="TitleScene.h" />
     <ClInclude Include="ZigzagEnemy.h" />

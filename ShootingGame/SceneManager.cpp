@@ -1,6 +1,8 @@
 #include "SceneManager.h"
 #include "TitleScene.h"
 #include "InGameScene.h"
+#include "WinEndingScene.h"
+#include "LoseEndingScene.h"
 
 using namespace ShootingGame;
 
@@ -11,10 +13,14 @@ SceneManager::SceneManager()
 	currentScene = NULL;
 	sceneContainer.insert({ GameState::Scene_Title, new TitleScene });
 	sceneContainer.insert({ GameState::Scene_InGame, new InGameScene });
+	sceneContainer.insert({ GameState::Scene_WinEnding, new WinEndingScene });
+	sceneContainer.insert({ GameState::Scene_LoseEnding, new LoseEndingScene });
 }
 
 SceneManager::~SceneManager()
 {
+	if (currentScene != NULL) { delete currentScene; }
+
 	for (const auto& pair : sceneContainer)
 	{
 		delete pair.second;

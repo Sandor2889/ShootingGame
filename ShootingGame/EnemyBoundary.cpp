@@ -1,6 +1,6 @@
 #include "EnemyBoundary.h"
 
-EnemyBoundary::EnemyBoundary(Rect _rect) : rect(_rect) { }
+EnemyBoundary::EnemyBoundary(CRect _rect) : rect(_rect) { }
 
 void EnemyBoundary::Update(GameObject* _obj)
 {
